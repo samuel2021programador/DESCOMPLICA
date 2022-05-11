@@ -1,0 +1,63 @@
+<!DOCTYPE html> 
+    <html lang="pt-br">
+        <head>
+            <meta charset="utf-8">
+            <title>temperatura do ano da estação meteorológica</title>
+        </head>
+        <body>
+            <h2>temperatura do ano da estação meteorológica</h2>
+<script>
+    // acima parte 1 criar um vetor com as infromações dos graus //
+    function F3(numg){
+        var x;
+        for(x=0; x<14; x++){ 
+            numg[x] = parseInt(window.prompt("digite graus Celsiu: "));  
+        }
+    }
+    
+    function F4(numg){
+        document.write("Graus Celsius no ano: ");
+        document.write(numg + "<br><br>");
+    }
+    //vetor para a pessoa dar as informações da quantidade de graus //
+    function F1 (numg){
+        var cont = 0;
+        for(i=0 ; i<=numg.length-1 ; i++){
+            if(numg[i] > 30 ){
+                cont = cont + 1;
+            }
+        }
+    
+        document.write("números de graus acima de 30 no ano é: " + cont +  "<br><br> ");
+    
+    }
+    
+    
+    //trazendo os graus maiores que 30
+    //media 
+    function F2 (numg){
+        var cont = 0;
+        var soma = 0;
+        for(i=0 ; i<=numg.length-1 ; i++){
+                cont = cont + 1;  
+                soma = soma + numg[i];
+        }
+        media =  soma / cont;//soma todos os 14 numeros somados//cont os 14 numeros 
+        document.write("A média da temperatura do ano da estação meteorológica é: " + media + "<br><br><br>" );
+    }
+    
+    //programa principal 
+    numg = new Array();
+    //preencher a temperaturas fornecidas pelo usuário.
+    F3(numg);
+    // retornar e apresentar os dias que tiveram a temperatura maior que 30
+    F1(numg);
+    //media 
+    F2(numg);
+    //mostrar saida 
+    F4(numg);
+    
+</script>
+    </body>
+ </html>
+    
