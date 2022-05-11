@@ -1,0 +1,42 @@
+<!DOCTYPE html> 
+    <html lang="pt-br">
+        <head>
+            <meta charset="utf-8">
+            <title>Algoritmos e Lógica de Programção</title>
+        </head>
+        <body>
+            <h2>Programando Javascript</h2>
+            <script>
+
+            function BuscaSequencial(n, num){
+                 Achou = false;
+                 i = 0;
+
+                 while ((i<num.length) && (!Achou)){
+                     if(n==num[i]){
+                        Achou = true;
+                     }
+                     i = i + 1;
+                 }
+
+                 if (Achou){
+                    document.write("Achou " + num[i-1] + "<br><br>");
+                 }
+                 else {
+                    document.write(n + " não encontrado <br>");
+                }
+                 return num;
+             }   
+             Lista = new Array();
+
+             for (x=0; x<10 ; x++){
+                 Lista[x] = parseInt(window.prompt("Digite um inteiro: "));
+             }
+             
+             valor = parseInt(window.prompt("Digite um número para ser buscado: "));
+             document.write(Lista + "<br><br>");
+             BuscaSequencial(valor, Lista);
+
+            </script>
+        </body>
+    </html>

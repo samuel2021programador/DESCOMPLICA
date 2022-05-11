@@ -1,0 +1,71 @@
+<script>
+
+    var numero = 90;
+    function fib(n){
+        if (n < 2 ) return n;
+        
+        var res = 1;
+        var res_1 = 0;
+        var aux;
+        for ( i = 1; i < n; i++){
+            aux = res_1;
+            res_1 = res;
+            res = res_1 + aux;
+            }
+            
+            return res;
+        }
+        
+        document.write(fib(numero) + "<br><br>");
+        
+    </script>
+
+<script>
+    var numero = 3;
+    
+    function fib(n){
+        if (n < 2 ) return n;
+        
+        var res = 1;
+        var res_1 = 0;
+        var aux;
+        for ( i = 1; i < n; i++){
+            aux = res_1;
+            res_1 = res;
+            res = res_1 + aux;
+            }
+            
+            return res;
+    }
+        
+    function fibP(n,f,f1, c){
+        var aux;
+        if (n === 0){
+            document.write("o" + n + "o elemento é " + 0);
+        }else if (n === c + 1 || n == 1){
+            document.write("o" + n + "o elemento é " + f);
+        }else {
+            c = c + 1;
+            aux = f1;
+            f1 = f;
+            f = f1 + aux;
+            //document.write("-",f,"-",f1,"-",c,"<br>");
+            fibP(n,f,f1,c);
+            }
+    }
+    
+    function fibFR(n){
+        if (n<2){
+        return n;
+        } else {
+            return fibFR(n-1) + fibFR(n-2);
+            }
+    }
+            
+    document.write(fib(numero) + "<br><br>");
+        
+    document.write(fibP(numero,1,0,0) + "<br><br>");
+    
+    document.write(fibFR(numero));  
+    
+    </script>
