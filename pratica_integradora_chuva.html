@@ -1,0 +1,105 @@
+<!DOCTYPE html> 
+    <html lang="pt-br">
+        <head>
+            <meta charset="utf-8">
+            <title>Pratica integradora sobre temperaturas</title>
+        </head>
+        <body>
+            <h2>Pratica integradora sobre temperaturas</h2>
+            <script>
+                function Inf(){
+                    dia = new Array();
+                    dia =[2,3,6,8,10,12,15,22,27,25,5,4];
+                    document.write("dias: " + dia + "<br><br>");
+                    
+                    mes = new Array();
+                    mes =[1,1,1,1,1,1,2,2,2,2,2,2];
+                    document.write(" meses: " + mes  + "<br><br>");
+                    
+                     tmax = new Array();
+                    tmax =[16,17,18,19,20,31,35,27,28,23,24,38];
+                    document.write(" temperaturas maximas: " + tmax + "<br><br>");
+                    
+                    tmin = new Array();
+                       tmin =[11,13,14,15,20,33,22,19,28,23,24,17];
+                    document.write(" temperaturas minimas: " + tmin + "<br><br>");
+                    
+                    choveu = new Array();
+                    choveu =['y','n','y','y','y','y','n','n','n','n','n','n'];
+                    document.write("choveu: " + choveu + "<br><br>");
+                }
+                
+                function Dchoveu(){
+                    var cont = 0;
+                    for(i=0 ; i<=choveu.length-1 ; i++){
+                        if(choveu[i] == 'y' ){
+                            cont = cont + 1;
+                        }        
+                    }
+                      document.write("dias que choveu: " + cont + "	dias" +  "<br><br> ");
+                }
+                function Mediatempmax(){
+                    var cont = 0;
+                    var soma = 0;
+                    for(i=0 ; i<=tmax.length-1; i++){
+                        cont = cont + 1;  
+                        soma = soma + tmax[i];
+                    }
+                media =  soma / cont;//soma todos os 14 numeros somados//cont os 14 numeros 
+                document.write("A média da temperatura maxima do ano é: " + media + "<br><br>" );
+                }
+                function Mediatempmin(){
+                    var cont = 0;
+                    var soma = 0;
+                    for(i=0 ; i<=tmin.length-1; i++){
+                        cont = cont + 1;  
+                        soma = soma + tmin[i];
+                    }
+                media =  soma / cont;//soma todos os 14 numeros somados//cont os 14 numeros 
+                document.write("A média da temperatura minima do ano é: " + media + "<br><br>" );
+                }
+                function BubbleSortmax(){
+                    for (i=0 ; i<tmax.length-1 ; i++){
+                        for (j =0 ; j<tmax.length-1-i ; j++){
+                            if(tmax[j] > tmax[j+1]){
+                                temp = tmax[j];
+                                tmax[j] = tmax[j+1];
+                                tmax[j+1] = temp;
+                            }
+                        }
+                    }
+                document.write(" Ordenação da temperatura máxima:  " + tmax + "<br><br>");           
+                }
+                function Mediatempmes(){
+                    var cont = 0;
+                    var soma = 0;
+                    for(i=0 ; i< tmax.length ; i++){
+                        if(mes[i] == 1){
+                            cont = cont + 1;  
+                            soma = soma + tmax[i];	
+                        }
+                        
+                    }
+                    media =  soma / cont;//soma todos os 14 numeros somados//cont os 14 numeros 
+                    document.write("A média do mês 1 é: " + media + "<br><br>" );
+                } 
+            
+            
+                    
+                    
+            //função principal
+            Inf();
+            //dias que choveram
+            Dchoveu();
+            //media da temperatura maxima do ano 
+            Mediatempmax();
+            //media da temperatura minima do ano 
+            Mediatempmin();
+            //media do mes x
+            Mediatempmes();
+            //ordernar da temperatura maxima com bubblesort 
+            BubbleSortmax();
+            
+            </script>
+        </body>
+    </html>
